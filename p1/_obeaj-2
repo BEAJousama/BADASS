@@ -1,0 +1,7 @@
+FROM frrouting/frr
+
+RUN apk upgrade --no-cache
+
+# RUN cp /etc/frr/vtysh.conf.sample /etc/frr/vtysh.conf
+
+COPY ./conf/deamons /etc/frr/deamons
