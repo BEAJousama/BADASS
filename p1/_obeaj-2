@@ -1,7 +1,13 @@
 FROM frrouting/frr
 
-RUN apk upgrade --no-cache
+# Upgrade the package index and install required packages
+RUN apk upgrade --no-cache && \
+    apk add --no-cache iputils busybox-static
 
+# Copy the configuration file
+COPY ./conf/daemons /etc/frr/daemons
+
+# Uncomment if you need to copy the sample vtysh configuration
 # RUN cp /etc/frr/vtysh.conf.sample /etc/frr/vtysh.conf
 
-COPY ./conf/deamons /etc/frr/deamons
+CMD ["busybox", "sh"]
