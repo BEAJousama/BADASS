@@ -1,13 +1,7 @@
 FROM frrouting/frr
-
-# Upgrade the package index and install required packages
 RUN apk upgrade --no-cache && \
     apk add --no-cache iputils busybox-static
 
-# Copy the configuration file
 COPY ./conf/daemons /etc/frr/daemons
-COPY  ./startup.sh /tmp/startup.sh
 
-ENTRYPOINT [ "sh", "/tmp/startup.sh" ]
 CMD ["busybox", "sh"]
-
