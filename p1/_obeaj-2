@@ -7,6 +7,8 @@ RUN apk upgrade --no-cache && \
 # Copy the configuration file
 COPY ./conf/daemons /etc/frr/daemons
 
+COPY ./conf/vtysh.conf /etc/frr/vtysh.conf
+
 # Uncomment if you need to copy the sample vtysh configuration
 # RUN cp /etc/frr/vtysh.conf.sample /etc/frr/vtysh.conf
 
