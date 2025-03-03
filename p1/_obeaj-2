@@ -8,3 +8,5 @@ RUN apk upgrade --no-cache && \
 COPY ./conf/daemons /etc/frr/daemons
 
 ENTRYPOINT [ "/etc/init.d/frr start" ]
+CMD ["busybox", "sh"]
+
