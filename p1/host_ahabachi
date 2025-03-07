@@ -1,1 +1,9 @@
 FROM alpine:3.21.3
+
+RUN apk upgrade --no-cache
+RUN apk add --no-cache iputils busybox-static
+
+COPY configs/etc/init.d/start_host.sh /etc/init.d/
+
+
+CMD [ "/bin/sh", "/etc/init.d/start_host.sh" ]

@@ -1,4 +1,4 @@
-GNS3VM_IP=192.168.56.102
+GNS3VM_IP=192.168.56.103
 
 ssh:
 	ssh gns3@${GNS3VM_IP}
@@ -19,3 +19,7 @@ start_router_ahabachi:
 	docker run -it router_ahabachi:p1 sh
 
 build: build_host_ahabachi build_router_ahabachi
+
+clean:
+	docker image rm host_ahabachi:p1   || true
+	docker image rm router_ahabachi:p1 || true
