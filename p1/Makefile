@@ -1,4 +1,7 @@
-GNS3VM_IP=192.168.56.103
+GNS3VM_IP=192.168.56.104
+
+help:
+	echo "ana maslo9a"
 
 ssh:
 	ssh gns3@${GNS3VM_IP}

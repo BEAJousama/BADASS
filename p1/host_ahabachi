@@ -5,5 +5,4 @@ RUN apk add --no-cache iputils busybox-static
 
 COPY configs/etc/init.d/start_host.sh /etc/init.d/
 
-
 CMD [ "/bin/sh", "/etc/init.d/start_host.sh" ]
