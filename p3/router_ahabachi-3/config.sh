@@ -15,9 +15,9 @@ interface lo
     ip ospf area 0
 !
 
-router bgp 1
+router bgp 65000
     bgp router-id 1.1.1.3
-    neighbor 1.1.1.1 remote-as 1
+    neighbor 1.1.1.1 remote-as 65000
     neighbor 1.1.1.1 update-source lo
     !
     address-family l2vpn evpn

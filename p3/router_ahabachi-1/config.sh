@@ -23,18 +23,18 @@ interface lo
     ip address 1.1.1.1/32
 !
 
-router bgp 1
+router bgp 65000
     bgp router-id 1.1.1.1
     # no bgp default ipv4-unicast
-    neighbor ibgp peer-group
-    neighbor ibgp remote-as 1
-    neighbor ibgp update-source lo
-    bgp listen range 1.1.1.0/29 peer-group ibgp
+    neighbor VTEP-PEERS peer-group
+    neighbor VTEP-PEERS remote-as 65000
+    neighbor VTEP-PEERS update-source lo
+    bgp listen range 1.1.1.0/29 peer-group VTEP-PEERS
 
     !
     address-family l2vpn evpn
-        neighbor ibgp activate
-        neighbor ibgp route-reflector-client
+        neighbor VTEP-PEERS activate
+        neighbor VTEP-PEERS route-reflector-client
     exit-address-family
 !
 
