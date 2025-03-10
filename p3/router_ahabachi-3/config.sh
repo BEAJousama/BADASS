@@ -11,11 +11,12 @@ interface eth0
 !
 
 interface lo
-    ip address 10.1.1.3/32
+    ip address 1.1.1.3/32
     ip ospf area 0
 !
 
 router bgp 1
+    bgp router-id 1.1.1.3
     neighbor 1.1.1.1 remote-as 1
     neighbor 1.1.1.1 update-source lo
     !
@@ -24,6 +25,8 @@ router bgp 1
         # advertise-all-vni
     exit-address-family
 !
+
 router ospf
+
 !
 
