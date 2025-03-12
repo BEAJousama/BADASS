@@ -3,5 +3,6 @@ RUN apk upgrade --no-cache && \
     apk add --no-cache iputils busybox-static
 
 COPY ./conf/daemons /etc/frr/daemons
+COPY scripts/start_router.sh /etc/init.d/
 
-CMD ["busybox", "sh"]
+CMD [ "/bin/sh", "/etc/init.d/start_router.sh" ]
