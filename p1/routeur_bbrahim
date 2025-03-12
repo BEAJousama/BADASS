@@ -1,0 +1,7 @@
+FROM frrouting/frr
+RUN apk upgrade --no-cache && \
+    apk add --no-cache iputils busybox-static
+
+COPY ./conf/daemons /etc/frr/daemons
+
+CMD ["busybox", "sh"]
