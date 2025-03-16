@@ -34,9 +34,9 @@ configure terminal
 
 # Disable IPv6 forwarding to focus on IPv4 only
 no ipv6 forwarding
+!
 
 # Configure physical interface with point-to-point IPv4 address
-!
 interface eth0
     # P2P link matching the first router's eth0 subnet
     ip address 10.1.1.2/30

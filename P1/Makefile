@@ -1,4 +1,4 @@
-GNS3VM_IP=192.168.56.101
+GNS3VM_IP=192.168.56.110
 
 help:
 	echo "ana maslo9a"

@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # Enter FRR VTYSH shell
 vtysh
 
@@ -12,7 +10,7 @@ no ipv6 forwarding
 # Configure physical interfaces with point-to-point IPv4 addresses
 # Each interface is in a different /30 subnet which allows for 2 usable addresses
 interface eth0
-    # First P2P link (usable range: 10.1.1.1-10.1.1.2)
+    # First P2P link (usable range: 10.1.1.1-10.1.1.2) network 10.1.1.0/30
     ip address 10.1.1.1/30
 !
 

@@ -70,6 +70,6 @@ router bgp 65000
 !
 
 # OSPF Configuration (minimal since interface-specific config is above)
-router ospf
 #  network 0.0.0.0/0 area 0
+router ospf
 !

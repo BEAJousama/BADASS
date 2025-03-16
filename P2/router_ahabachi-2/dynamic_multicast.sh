@@ -19,7 +19,6 @@ ip addr add 10.1.1.2/24 dev eth0
 ip link add name vxlan10 type vxlan id 10 dev eth0 group 239.1.1.1 dstport 4789
 
 # Assign IP address to VXLAN interface
-# This creates a routed VXLAN interface (L3VXLAN)
 # Hosts in the 20.1.1.0/24 subnet can use this as a gateway
 ip addr add 20.1.1.2/24 dev vxlan10
 
@@ -29,8 +28,6 @@ brctl addif br0 eth1
 
 # Add VXLAN interface to the bridge
 # This bridges the VXLAN tunnel with the local interface
-# NOTE: This creates a mixed L2/L3 configuration that may cause unpredictable behavior
-# Typically, you either assign an IP to vxlan10 OR bridge it, not both
 brctl addif br0 vxlan10
 
 # Activate the VXLAN interface
